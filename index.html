@@ -14,15 +14,12 @@
             padding: 20px;
             background-color: #f0f0f0;
         }
-        header {
+        header, section {
             background-color: #ffffff;
             padding: 1rem;
-            text-align: center;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        nav {
-            margin-top: 1rem;
+            margin-bottom: 1rem;
         }
         nav ul {
             list-style-type: none;
@@ -40,21 +37,14 @@
         a:hover {
             color: #0056b3;
         }
-        section {
-            background-color: #ffffff;
-            margin-top: 2rem;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
         h1, h2 {
             color: #0366d6;
         }
-        footer {
-            margin-top: 2rem;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #777;
+        .content {
+            display: none;
+        }
+        .content.active {
+            display: block;
         }
     </style>
 </head>
@@ -63,35 +53,100 @@
         <h1>Your Name</h1>
         <nav>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="projects.html">Open Source Projects</a></li>
-                <li><a href="extra.html">Extra Page</a></li>
+                <li><a href="#" onclick="showContent('home')">Home</a></li>
+                <li><a href="#" onclick="showContent('blog')">Blog</a></li>
+                <li><a href="#" onclick="showContent('projects')">Open Source Projects</a></li>
+                <li><a href="#" onclick="showContent('extra')">Extra Page</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="about">
-            <h2>About</h2>
-            <p>Welcome to my GitHub Pages site! I'm a [your profession/title] passionate about [your interests]. This is where I share my thoughts, projects, and experiences.</p>
-        </section>
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>You can reach me at:</p>
-            <ul>
-                <li>Email: your.email@example.com</li>
-                <li>GitHub: <a href="https://github.com/yourusername">@yourusername</a></li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile">Your Name</a></li>
-                <li>Twitter: <a href="https://twitter.com/yourhandle">@yourhandle</a></li>
-            </ul>
-        </section>
+    <main id="main-content">
+        <!-- Content will be loaded here dynamically -->
     </main>
 
     <footer>
         <p>&copy; 2024 Your Name. All rights reserved.</p>
     </footer>
+
+    <script>
+        const content = {
+            home: `
+                <section id="about">
+                    <h2>About</h2>
+                    <p>Welcome to my GitHub Pages site! I'm a [your profession/title] passionate about [your interests]. This is where I share my thoughts, projects, and experiences.</p>
+                </section>
+                <section id="contact">
+                    <h2>Contact</h2>
+                    <p>You can reach me at:</p>
+                    <ul>
+                        <li>Email: your.email@example.com</li>
+                        <li>GitHub: <a href="https://github.com/yourusername">@yourusername</a></li>
+                        <li>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile">Your Name</a></li>
+                        <li>Twitter: <a href="https://twitter.com/yourhandle">@yourhandle</a></li>
+                    </ul>
+                </section>
+            `,
+            blog: `
+                <section>
+                    <h2>Recent Blog Posts</h2>
+                    <div class="blog-post">
+                        <h3>My First Blog Post</h3>
+                        <p>Published on: June 1, 2024</p>
+                        <p>This is a summary of my first blog post. It could be about anything - a project I'm working on, my thoughts on a new technology, or a tutorial I've written.</p>
+                    </div>
+                    <div class="blog-post">
+                        <h3>Reflections on Open Source</h3>
+                        <p>Published on: May 15, 2024</p>
+                        <p>In this post, I share my experiences contributing to open source projects and what I've learned along the way.</p>
+                    </div>
+                    <div class="blog-post">
+                        <h3>The Future of Web Development</h3>
+                        <p>Published on: April 30, 2024</p>
+                        <p>Here, I explore some emerging trends in web development and speculate on where the field might be heading in the coming years.</p>
+                    </div>
+                </section>
+            `,
+            projects: `
+                <section>
+                    <h2>My Open Source Projects</h2>
+                    <div class="project">
+                        <h3>Project Name 1</h3>
+                        <p>A brief description of what this project does and what technologies it uses. You can also mention your role in the project and any significant achievements or milestones.</p>
+                    </div>
+                    <div class="project">
+                        <h3>Project Name 2</h3>
+                        <p>Another project description. This could be a tool you've created, a library you've contributed to, or any other open source work you're proud of.</p>
+                    </div>
+                    <div class="project">
+                        <h3>Project Name 3</h3>
+                        <p>A third project description. Remember to highlight what makes each project unique or interesting.</p>
+                    </div>
+                </section>
+            `,
+            extra: `
+                <section>
+                    <h2>Extra Content</h2>
+                    <p>This is an extra page where you can add any additional content you'd like. Some ideas for what you could include here:</p>
+                    <ul>
+                        <li>A portfolio of your work</li>
+                        <li>A list of your skills or certifications</li>
+                        <li>Your resume or CV</li>
+                        <li>Personal interests or hobbies</li>
+                        <li>Testimonials or recommendations</li>
+                    </ul>
+                    <p>Feel free to customize this page to suit your needs!</p>
+                </section>
+            `
+        };
+
+        function showContent(page) {
+            const mainContent = document.getElementById('main-content');
+            mainContent.innerHTML = content[page];
+        }
+
+        // Show home content by default
+        showContent('home');
+    </script>
 </body>
 </html>
