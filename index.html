@@ -29,12 +29,13 @@
             display: inline;
             margin-right: 10px;
         }
-        a {
+        nav ul li a {
             color: #0366d6;
             text-decoration: none;
             transition: color 0.3s ease;
+            cursor: pointer;
         }
-        a:hover {
+        nav ul li a:hover {
             color: #0056b3;
         }
         h1, h2 {
@@ -53,10 +54,11 @@
         <h1>Your Name</h1>
         <nav>
             <ul>
-                <li><a href="#" onclick="showContent('home')">Home</a></li>
-                <li><a href="#" onclick="showContent('blog')">Blog</a></li>
-                <li><a href="#" onclick="showContent('projects')">Open Source Projects</a></li>
-                <li><a href="#" onclick="showContent('extra')">Extra Page</a></li>
+                <li><a onclick="showContent('home')">Home</a></li>
+                <li><a onclick="showContent('blog')">Blog</a></li>
+                <li><a onclick="showContent('projects')">Open Source Projects</a></li>
+                <li><a onclick="showContent('extra')">Extra Page</a></li>
+
             </ul>
         </nav>
     </header>
@@ -143,10 +145,22 @@
         function showContent(page) {
             const mainContent = document.getElementById('main-content');
             mainContent.innerHTML = content[page];
+           
+            // Update URL without navigating
+            history.pushState(null, '', '#' + page);
         }
 
-        // Show home content by default
-        showContent('home');
+        // Show content based on hash in URL
+        function showContentFromHash() {
+            const hash = window.location.hash.substring(1);
+            showContent(hash || 'home');
+        }
+
+        // Initial load
+        showContentFromHash();
+
+        // Listen for hash changes
+        window.addEventListener('hashchange', showContentFromHash);
     </script>
 </body>
 </html>
