@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nikita Parate</title>
+    <title>Nikita Parate - Personal Website</title>
     <style>
         body {
-            font-family: sans-serif, sans-serif;
+            font-family: Arial, sans-serif;
             line-height: 1.6;
             color: #333;
             max-width: 800px;
@@ -14,38 +14,27 @@
             padding: 20px;
             background-color: #f0f0f0;
         }
-        header, section {
-            background-color: #ffffff;
-            padding: 1rem;
+        header, nav, section {
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 1rem;
         }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
+        h1 {
+            color: #0066cc;
+            margin: 0;
         }
-        nav ul li {
-            display: inline;
-            margin-right: 30px;
-        }
-        nav ul li a {
-            color: #0366d6;
+        nav a {
+            color: #0066cc;
             text-decoration: none;
-            transition: color 0.3s ease;
-            cursor: pointer;
+            margin-right: 20px;
         }
-        nav ul li a:hover {
-            color: #0056b3;
+        h2 {
+            color: #0066cc;
         }
-        h1, h2 {
-            color: #0366d6;
-        }
-        .content {
-            display: none;
-        }
-        .content.active {
-            display: block;
+        ul {
+            padding-left: 20px;
         }
     </style>
 </head>
@@ -53,116 +42,27 @@
     <header>
         <h1>Nikita Parate</h1>
         <nav>
-            <ul>
-                <li><a onclick="showContent('home')">Home</a></li>
-                <li><a onclick="showContent('blog')">Blog</a></li>
-                <li><a onclick="showContent('projects')">Open Source Projects</a></li>
-                <li><a onclick="showContent('extra')">Extra Page</a></li>
-
-            </ul>
+            <a href="index.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="#">Open Source Projects</a>
+            <a href="#">Extra Page</a>
         </nav>
     </header>
 
-    <main id="main-content">
-        <!-- Content will be loaded here dynamically -->
-    </main>
+    <section>
+        <h2>About</h2>
+        <p>Hello! I'm Nikita Parate, an AI scientist passionate about pushing the boundaries of technology. Based in the vibrant city of Bangalore, India, I specialize in developing cutting-edge AI and ML models that drive innovation across various industries.</p>
+        <p>I hold a Master's degree in Communication and Network from Indian Institute of Science, Bangalore. I am on a journey to explore the intricacies of artificial intelligence.</p>
+        <p>In addition to my professional aspirations, I have a distant dream of writing a book someday, sharing my knowledge and experiences with a wider audience.</p>
+        <p>I'm best reached via email. I'm always open to interesting conversations and collaboration.</p>
+    </section>
 
-    <footer>
-        <p>&copy; 2024 Your Name. All rights reserved.</p>
-    </footer>
-
-    <script>
-        const content = {
-            home: `
-                <section id="about">
-                    <h2>About</h2>
-                    <p>Hello! I'm Nikita Parate, an AI scientist passionate about pushing the boundaries of technology. Based in the vibrant city of Bangalore, India, I specialize in developing cutting-edge AI and ML models that drive innovation across various industries.</p>
-<p>I hold a Master's degree in Communication and Network from Indian Institute of Science, Bangalore. I am on a journey to explore the intricacies of artificial intelligence.</p>
-<p>In addition to my professional aspirations, I have a distant dream of writing a book someday, sharing my knowledge and experiences with a wider audience. </p>
-<p>I’m best reached via email. I’m always open to interesting conversations and collaboration.</p>
-                </section>
-                <section id="contact">
-                    <h2>Contact</h2>
-                    <p>You can reach me at:</p>
-                    <ul>
-                        <li>Email: nikitaparate009@gmail.com</li>
-                        <li>LinkedIn: <a href="https://www.linkedin.com/in/nikita-parate-97941370">nikita-parate-97941370</a></li>
-                        <li>Twitter: <a href="https://x.com/NikitaPara81036">NikitaPara81036</a></li>
-                    </ul>
-                </section>
-            `,
-            blog: `
-                <section>
-                    <h2>Recent Blog Posts</h2>
-                    <div class="blog-post">
-                        <h3><a href="https://github.com/nikitaparate/QnA/blob/main/Interview_ML/ML_qna.html">ML Interview Questions</a></h3>
-                        <p>Published on: July 3, 2024</p>
-                        <p>This is a summary of my first blog post. It could be about anything - a project I'm working on, my thoughts on a new technology, or a tutorial I've written.</p>
-                    </div>
-                    <div class="blog-post">
-                        <h3>Reflections on Open Source</h3>
-                        <p>Published on: May 15, 2024</p>
-                        <p>In this post, I share my experiences contributing to open source projects and what I've learned along the way.</p>
-                    </div>
-                    <div class="blog-post">
-                        <h3>The Future of Web Development</h3>
-                        <p>Published on: April 30, 2024</p>
-                        <p>Here, I explore some emerging trends in web development and speculate on where the field might be heading in the coming years.</p>
-                    </div>
-                </section>
-            `,
-            projects: `
-                <section>
-                    <h2>My Open Source Projects</h2>
-                    <div class="project">
-                        <h3>Project Name 1</h3>
-                        <p>A brief description of what this project does and what technologies it uses. You can also mention your role in the project and any significant achievements or milestones.</p>
-                    </div>
-                    <div class="project">
-                        <h3>Project Name 2</h3>
-                        <p>Another project description. This could be a tool you've created, a library you've contributed to, or any other open source work you're proud of.</p>
-                    </div>
-                    <div class="project">
-                        <h3>Project Name 3</h3>
-                        <p>A third project description. Remember to highlight what makes each project unique or interesting.</p>
-                    </div>
-                </section>
-            `,
-            extra: `
-                <section>
-                    <h2>Extra Content</h2>
-                    <p>This is an extra page where you can add any additional content you'd like. Some ideas for what you could include here:</p>
-                    <ul>
-                        <li>A portfolio of your work</li>
-                        <li>A list of your skills or certifications</li>
-                        <li>Your resume or CV</li>
-                        <li>Personal interests or hobbies</li>
-                        <li>Testimonials or recommendations</li>
-                    </ul>
-                    <p>Feel free to customize this page to suit your needs!</p>
-                </section>
-            `
-        };
-
-        function showContent(page) {
-            const mainContent = document.getElementById('main-content');
-            mainContent.innerHTML = content[page];
-           
-            // Update URL without navigating
-            history.pushState(null, '', '#' + page);
-        }
-
-        // Show content based on hash in URL
-        function showContentFromHash() {
-            const hash = window.location.hash.substring(1);
-            showContent(hash || 'home');
-        }
-
-        // Initial load
-        showContentFromHash();
-
-        // Listen for hash changes
-        window.addEventListener('hashchange', showContentFromHash);
-    </script>
+    <section>
+        <h2>Contact</h2>
+        <p>You can reach me at:</p>
+        <ul>
+            <li>Email: nikitaparate009@gmail.com</li>
+        </ul>
+    </section>
 </body>
 </html>
