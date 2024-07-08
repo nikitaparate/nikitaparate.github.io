@@ -3,22 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resources</title>
+    <title>The Future of AI in Healthcare - Nikita Parate's Blog</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            margin: 0;
+            padding: 0;
             background-color: #f0f0f0;
         }
         header, nav, article {
             background-color: white;
             margin-bottom: 20px;
             padding: 20px;
-            border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         h1, h2 {
@@ -47,7 +45,7 @@
             z-index: 1;
         }
         .ml-systems-table-container {
-            max-height: 400px;
+            max-height: 600px;
             overflow-y: auto;
             border: 1px solid #ddd;
             margin-bottom: 20px;
@@ -66,111 +64,121 @@
         .tag-generative-ai { background-color: #ffd3e6; }
         .tag-search { background-color: #d1ecf1; }
         .tag-fraud-detection { background-color: #fff3cd; }
+        .container {
+            width: 95%;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Resources: ML System Design</h1>
-        <nav>
-            <a href="../index.html">Home</a>
-            <a href="../blog.html">Blog</a>
-            <a href="../resources.html">Resources</a>
-        </nav>
+        <div class="container">
+            <h1>Resources: ML System Design</h1>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../resources.html">Resources</a>
+            </nav>
+        </div>
     </header>
     <article>
-        <h2>ML system design: 450 case studies from 100+ companies</h2>
-        <div class="ml-systems-table-container">
-            <table class="ml-systems-table">
-                <thead>
-                    <tr>
-                        <th>Company</th>
-                        <th>Industry</th>
-                        <th>Short Description (< 5 words)</th>
-                        <th>Title</th>
-                        <th>Tag</th>
-                        <th>Year</th>
-                        <th>Link</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Picnic</td>
-                        <td>Delivery and mobility</td>
-                        <td>Create personalized shopping lists</td>
-                        <td>Generating your shopping list with AI: recommendations at...</td>
-                        <td><span class="tag tag-recommender">recommender system</span></td>
-                        <td>2024</td>
-                        <td><a href="https://blog.picnic.nl/generating-your-shopping-list-with-ai-recommendations-at-picnic-300e716241db">Link</a></td>
-                    </tr>
-                    <tr>
-                        <td>Algolia</td>
-                        <td>Tech</td>
-                        <td>Present online visitors with tailored content</td>
-                        <td>Introducing AI Personalization (β)</td>
-                        <td>
-                            <span class="tag tag-content-personalization">content personalization</span>
-                            <span class="tag tag-product-feature">product feature</span>
-                        </td>
-                        <td>2024</td>
-                        <td><a href="https://www.algolia.com/blog/product/introducing-ai-personalization/">Link</a></td>
-                    </tr>
-                    <tr>
-                        <td>Uber</td>
-                        <td>Delivery and mobility</td>
-                        <td>Personalize Out-of-App communications</td>
-                        <td>Personalized Marketing at Scale: Uber's Out-of-App...</td>
-                        <td><span class="tag tag-recommender">recommender system</span></td>
-                        <td>2024</td>
-                        <td><a href="https://www.uber.com/en-GB/blog/personalized-marketing-at-scale/">Link</a></td>
-                    </tr>
-                    <tr>
-                        <td>Gitlab</td>
-                        <td>Tech</td>
-                        <td>Testing quality of AI-generated outputs</td>
-                        <td>Developing GitLab Duo: How we validate and test AI mode...</td>
-                        <td>
-                            <span class="tag tag-product-feature">product feature</span>
-                            <span class="tag tag-llm">LLM</span>
-                            <span class="tag tag-generative-ai">generative AI</span>
-                        </td>
-                        <td>2024</td>
-                        <td><a href="https://about.gitlab.com/blog/2024/05/09/developing-gitlab-duo-how-we-validate-and-test-ai-models-at-scale/">Link</a></td>
-                    </tr>
-                    <tr>
-                        <td>LinkedIn</td>
-                        <td>Social platforms</td>
-                        <td>Recommend relevant products to users</td>
-                        <td>Matching LinkedIn members with the right Premium...</td>
-                        <td><span class="tag tag-product-feature">product feature</span></td>
-                        <td>2024</td>
-                        <td><a href="https://www.linkedin.com/blog/engineering/machine-learning/matching-linkedin-members-with-the-right-premium-products">Link</a></td>
-                    </tr>
-                    <tr>
-                        <td>Swiggy</td>
-                        <td>Delivery and mobility</td>
-                        <td>Show product recommendations to new users</td>
-                        <td>New-User Product Recommendations for Q-...</td>
-                        <td><span class="tag tag-recommender">recommender system</span></td>
-                        <td>2024</td>
-                        <td><a href="https://bytes.swiggy.com/new-user-product-recommendations-for-q-commerce-via-hierarchical-cross-domain-learning-0a7f97b25405">Link</a></td>
-                    </tr>
-                    <tr>
-                        <td>Picnic</td>
-                        <td>Delivery and mobility</td>
-                        <td>Improve search relevance for product listings</td>
-                        <td>Enhancing Search Retrieval with Large Language Models...</td>
-                        <td>
-                            <span class="tag tag-llm">LLM</span>
-                            <span class="tag tag-search">search</span>
-                            <span class="tag tag-generative-ai">generative AI</span>
-                        </td>
-                        <td>2024</td>
-                        <td><a href="https://blog.picnic.nl/enhancing-search-retrieval-with-large-language-models-llms-7c3748b26d72">Link</a></td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="container">
+            <h2>ML system design: 450 case studies from 100+ companies</h2>
+            <div class="ml-systems-table-container">
+                <table class="ml-systems-table">
+                    <thead>
+                        <tr>
+                            <th>Company</th>
+                            <th>Industry</th>
+                            <th>Short Description (< 5 words)</th>
+                            <th>Title</th>
+                            <th>Tag</th>
+                            <th>Year</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Picnic</td>
+                            <td>Delivery and mobility</td>
+                            <td>Create personalized shopping lists</td>
+                            <td>Generating your shopping list with AI: recommendations at...</td>
+                            <td><span class="tag tag-recommender">recommender system</span></td>
+                            <td>2024</td>
+                            <td><a href="https://blog.picnic.nl/generating-your-shopping-list-with-ai-...">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Algolia</td>
+                            <td>Tech</td>
+                            <td>Present online visitors with tailored content</td>
+                            <td>Introducing AI Personalization (β)</td>
+                            <td>
+                                <span class="tag tag-content-personalization">content personalization</span>
+                                <span class="tag tag-product-feature">product feature</span>
+                            </td>
+                            <td>2024</td>
+                            <td><a href="https://www.algolia.com/blog/product/introducing-ai-personalization/">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Uber</td>
+                            <td>Delivery and mobility</td>
+                            <td>Personalize Out-of-App communications</td>
+                            <td>Personalized Marketing at Scale: Uber's Out-of-App...</td>
+                            <td><span class="tag tag-recommender">recommender system</span></td>
+                            <td>2024</td>
+                            <td><a href="https://www.uber.com/en-GB/blog/personalized-marketing...">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Gitlab</td>
+                            <td>Tech</td>
+                            <td>Testing quality of AI-generated outputs</td>
+                            <td>Developing GitLab Duo: How we validate and test AI mode...</td>
+                            <td>
+                                <span class="tag tag-product-feature">product feature</span>
+                                <span class="tag tag-llm">LLM</span>
+                                <span class="tag tag-generative-ai">generative AI</span>
+                            </td>
+                            <td>2024</td>
+                            <td><a href="https://about.gitlab.com/blog/2024/05/09/developing-gitlab-duo-...">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td>LinkedIn</td>
+                            <td>Social platforms</td>
+                            <td>Recommend relevant products to users</td>
+                            <td>Matching LinkedIn members with the right Premium...</td>
+                            <td><span class="tag tag-product-feature">product feature</span></td>
+                            <td>2024</td>
+                            <td><a href="https://www.linkedin.com/blog/engineering/machine-...">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Swiggy</td>
+                            <td>Delivery and mobility</td>
+                            <td>Show product recommendations to new users</td>
+                            <td>New-User Product Recommendations for Q-...</td>
+                            <td><span class="tag tag-recommender">recommender system</span></td>
+                            <td>2024</td>
+                            <td><a href="https://bytes.swiggy.com/new-user-product-recommendations-...">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Picnic</td>
+                            <td>Delivery and mobility</td>
+                            <td>Improve search relevance for product listings</td>
+                            <td>Enhancing Search Retrieval with Large Language Models...</td>
+                            <td>
+                                <span class="tag tag-llm">LLM</span>
+                                <span class="tag tag-search">search</span>
+                                <span class="tag tag-generative-ai">generative AI</span>
+                            </td>
+                            <td>2024</td>
+                            <td><a href="https://blog.picnic.nl/enhancing-search-retrieval-with-large-...">Link</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </article>
-    <a href="../resources.html">Back to Resources</a>
+    <div class="container">
+        <a href="../resources.html">Back to Resources</a>
+    </div>
 </body>
 </html>
