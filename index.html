@@ -3,69 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nikita Parate - Personal Website</title>
+    <title>Nikita Parate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Merriweather', serif;
             line-height: 1.6;
             color: #333;
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f0f0f0;
         }
-        header, nav, section {
-            background-color: white;
-            margin-bottom: 20px;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
         }
         h1 {
-            color: #0066cc;
+            font-size: 24px;
+            font-weight: 700;
             margin: 0;
         }
         nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 15px;
+            font-weight: 300;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+        }
+        .main-text {
+            flex: 1;
+            padding-right: 40px;
+        }
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        a {
             color: #0066cc;
             text-decoration: none;
-            margin-right: 20px;
         }
-        h2 {
-            color: #0066cc;
+        .social-links {
+            margin-top: 40px;
         }
-        ul {
-            padding-left: 20px;
+        .social-links a {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+            text-decoration: none;
         }
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-family: 'Merriweather', serif;
+        }
+        button {
+            background-color: #ccc;
+            border: none;
+            padding: 10px 20px;
+            font-family: 'Merriweather', serif;
+            cursor: pointer;
+        }
+        .thin-line {
+    border: none; /* Remove default border */
+    border-top: 1px solid lightgray; /* Add a thin light gray border */
+    margin: 10px 0; /* Add some space around the line */
+}
     </style>
 </head>
 <body>
     <header>
         <h1>Nikita Parate</h1>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="blog.html">Blogs</a>
-            <a href="resources.html">Resources</a>
-            
+            <a href="#" id="blog-link">Blog</a>
+            <a href="#">Resources</a>
         </nav>
     </header>
+    <hr class="thin-line">
 
-    <section>
-        <h2>Under Construction </h2>
-        <p>
-Thank you for visiting my GitHub page! I'm currently working on building this space. Please check back soon for updates.</p>
-        <h2>About</h2>
-        <p>Hello! I'm Nikita Parate, an AI scientist passionate about pushing the boundaries of technology. Based in the vibrant city of Bangalore, India, I specialize in developing cutting-edge AI and ML models that drive innovation across various industries.</p>
-        <p>I hold a Master's degree in Communication and Network from Indian Institute of Science, Bangalore. I am on a journey to explore the intricacies of artificial intelligence.</p>
-        <p>In addition to my professional aspirations, I have a distant dream of writing a book someday, sharing my knowledge and experiences with a wider audience.</p>
-        <p>I'm best reached via email. I'm always open to interesting conversations and collaboration.</p>
-    </section>
-
-    <section>
-        <h2>Contact</h2>
-        <p>You can reach me at:</p>
-        <ul>
-            <li>Email: nikitaparate009@gmail.com</li>
-        </ul>
-    </section>
+    <div class="content">
+        <div class="main-text">
+            <p>Hello! I'm Nikita Parate, an AI scientist passionate about pushing the boundaries of technology. Based in the vibrant city of Bangalore, India, I specialize in developing cutting-edge AI and ML models that drive innovation across various industries.</p>
+            
+            <p>I hold a Master's degree in Communication and Network from Indian Institute of Science, Bangalore. I am on a journey to explore the intricacies of artificial intelligence.</p>
+            
+            <p>In addition to my professional aspirations, I have a distant dream of writing a book someday, sharing my knowledge and experiences with a wider audience. </p>
+            
+            <p>I'm best reached via email. I'm always open to interesting conversations and collaboration.</p>
+            
+        </div>
+        <img src="/images/my_pic" alt="Nikita" class="profile-image">
+    </div>
+    <hr class="thin-line">
+    <div class="social-links">
+        <p>Email: <a href="mailto:nikitaparate009@gmail.com">nikitaparate009@gmail.com</a></p>
+    </div>
+    
 </body>
 </html>
