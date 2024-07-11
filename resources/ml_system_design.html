@@ -1,184 +1,244 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Future of AI in Healthcare - Nikita Parate's Blog</title>
+    <title>ML system design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Merriweather', serif;
             line-height: 1.6;
             color: #333;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        header, nav, article {
-            background-color: white;
-            margin-bottom: 20px;
+            max-width: 800px;
+            margin: 0 auto;
             padding: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        h1, h2 {
-            color: #0066cc;
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 0;
+        }
+        h2 {
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
         }
         nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 15px;
+            font-weight: 300;
+        }
+        a {
             color: #0066cc;
             text-decoration: none;
-            margin-right: 20px;
         }
-        .ml-systems-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9em;
+        .thin-line {
+            border: none;
+            border-top: 1px solid lightgray;
+            margin: 10px 0;
         }
-        .ml-systems-table th,
-        .ml-systems-table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        .ml-systems-table th {
-            background-color: #f2f2f2;
-            position: sticky;
-            top: 0;
-            z-index: 1;
-        }
-        .ml-systems-table-container {
-            max-height: 600px;
+        .table-container {
+            max-height: 400px;
             overflow-y: auto;
             border: 1px solid #ddd;
             margin-bottom: 20px;
         }
-        .tag {
-            display: inline-block;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 0.8em;
-            margin: 2px;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
         }
-        .tag-recommender { background-color: #cfe2ff; }
-        .tag-content-personalization { background-color: #e7d3ff; }
-        .tag-product-feature { background-color: #d0e8ff; }
-        .tag-llm { background-color: #d1ecf1; }
-        .tag-generative-ai { background-color: #ffd3e6; }
-        .tag-search { background-color: #d1ecf1; }
-        .tag-fraud-detection { background-color: #fff3cd; }
-        .container {
-            width: 95%;
-            margin: 0 auto;
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .industry-tag {
+            padding: 2px 6px;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+        .delivery-mobility {
+            background-color: #FFF3C9;
+        }
+        .tech {
+            background-color: #E6FFFA;
+        }
+        .social-platforms {
+            background-color: #E6F1FF;
+        }
+        .ml-tag {
+            padding: 2px 6px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin-right: 4px;
+        }
+        .recommender-system {
+            background-color: #E6F1FF;
+        }
+        .content-personalization {
+            background-color: #F3E8FF;
+        }
+        .product-feature {
+            background-color: #E6F1FF;
+        }
+        .llm {
+            background-color: #E6F1FF;
+        }
+        .generative-ai {
+            background-color: #FFE6E6;
+        }
+        .search {
+            background-color: #E6F1FF;
+        }
+        .fraud-detection {
+            background-color: #E6F1FF;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Resources: ML System Design</h1>
-            <nav>
-                <a href="../index.html">Home</a>
-                <a href="../blog.html">Blog</a>
-                <a href="../resources.html">Resources</a>
-            </nav>
-        </div>
+        <h1>Resources</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="resources.html">Resources</a>
+        </nav>
     </header>
+    <hr class="thin-line">
+    
     <article>
-        <div class="container">
-            <h2>ML system design: 450 case studies from 100+ companies</h2>
-            <div class="ml-systems-table-container">
-                <table class="ml-systems-table">
-                    <thead>
-                        <tr>
-                            <th>Company</th>
-                            <th>Industry</th>
-                            <th>Short Description (< 5 words)</th>
-                            <th>Title</th>
-                            <th>Tag</th>
-                            <th>Year</th>
-                            <th>Link</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Picnic</td>
-                            <td>Delivery and mobility</td>
-                            <td>Create personalized shopping lists</td>
-                            <td>Generating your shopping list with AI: recommendations at...</td>
-                            <td><span class="tag tag-recommender">recommender system</span></td>
-                            <td>2024</td>
-                            <td><a href="https://blog.picnic.nl/generating-your-shopping-list-with-ai-...">Link</a></td>
-                        </tr>
-                        <tr>
-                            <td>Algolia</td>
-                            <td>Tech</td>
-                            <td>Present online visitors with tailored content</td>
-                            <td>Introducing AI Personalization (β)</td>
-                            <td>
-                                <span class="tag tag-content-personalization">content personalization</span>
-                                <span class="tag tag-product-feature">product feature</span>
-                            </td>
-                            <td>2024</td>
-                            <td><a href="https://www.algolia.com/blog/product/introducing-ai-personalization/">Link</a></td>
-                        </tr>
-                        <tr>
-                            <td>Uber</td>
-                            <td>Delivery and mobility</td>
-                            <td>Personalize Out-of-App communications</td>
-                            <td>Personalized Marketing at Scale: Uber's Out-of-App...</td>
-                            <td><span class="tag tag-recommender">recommender system</span></td>
-                            <td>2024</td>
-                            <td><a href="https://www.uber.com/en-GB/blog/personalized-marketing...">Link</a></td>
-                        </tr>
-                        <tr>
-                            <td>Gitlab</td>
-                            <td>Tech</td>
-                            <td>Testing quality of AI-generated outputs</td>
-                            <td>Developing GitLab Duo: How we validate and test AI mode...</td>
-                            <td>
-                                <span class="tag tag-product-feature">product feature</span>
-                                <span class="tag tag-llm">LLM</span>
-                                <span class="tag tag-generative-ai">generative AI</span>
-                            </td>
-                            <td>2024</td>
-                            <td><a href="https://about.gitlab.com/blog/2024/05/09/developing-gitlab-duo-...">Link</a></td>
-                        </tr>
-                        <tr>
-                            <td>LinkedIn</td>
-                            <td>Social platforms</td>
-                            <td>Recommend relevant products to users</td>
-                            <td>Matching LinkedIn members with the right Premium...</td>
-                            <td><span class="tag tag-product-feature">product feature</span></td>
-                            <td>2024</td>
-                            <td><a href="https://www.linkedin.com/blog/engineering/machine-...">Link</a></td>
-                        </tr>
-                        <tr>
-                            <td>Swiggy</td>
-                            <td>Delivery and mobility</td>
-                            <td>Show product recommendations to new users</td>
-                            <td>New-User Product Recommendations for Q-...</td>
-                            <td><span class="tag tag-recommender">recommender system</span></td>
-                            <td>2024</td>
-                            <td><a href="https://bytes.swiggy.com/new-user-product-recommendations-...">Link</a></td>
-                        </tr>
-                        <tr>
-                            <td>Picnic</td>
-                            <td>Delivery and mobility</td>
-                            <td>Improve search relevance for product listings</td>
-                            <td>Enhancing Search Retrieval with Large Language Models...</td>
-                            <td>
-                                <span class="tag tag-llm">LLM</span>
-                                <span class="tag tag-search">search</span>
-                                <span class="tag tag-generative-ai">generative AI</span>
-                            </td>
-                            <td>2024</td>
-                            <td><a href="https://blog.picnic.nl/enhancing-search-retrieval-with-large-...">Link</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <h1>ML System Design Case Studies</h1>
+        
+        <p>The field of machine learning (ML) has grown exponentially over the past decade, transforming industries and reshaping the way businesses operate. As organizations increasingly adopt ML technologies, the need for effective system design becomes paramount. Understanding how to architect robust, scalable, and efficient ML systems is crucial for leveraging the full potential of these technologies.</p>
+
+         <p>This article presents a comprehensive collection of 20 ML system design case studies, each providing unique insights into the challenges and solutions encountered in real-world applications. By examining these case studies, we aim to highlight the diverse approaches and best practices employed by leading companies and institutions in deploying ML systems.</p>        
+        
+<!--         <h2>Key Concepts in Machine Learning</h2>
+        <ul>
+            <li>Supervised Learning</li>
+            <li>Unsupervised Learning</li>
+            <li>Reinforcement Learning</li>
+            <li>Feature Engineering</li>
+            <li>Model Evaluation</li>
+        </ul> -->
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Industry</th>
+                        <th>Title</th>
+                        <th>Tag</th>
+                        <th>Year</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Picnic</td>
+                        <td><span class="industry-tag delivery-mobility">Delivery and mobility</span></td>
+                        <td>Generating your shopping list with AI: recommendations at Picnic</td>
+                        <td><span class="ml-tag recommender-system">recommender system</span></td>
+                        <td>2024</td>
+                        <td><a href="https://blog.picnic.nl/generating-your-shopping-list-with-ai-recommendations-at-picnic-95e2c75bec25">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td>Algolia</td>
+                        <td><span class="industry-tag tech">Tech</span></td>
+                        <td>Introducing AI Personalization (β)</td>
+                        <td><span class="ml-tag content-personalization">content personalization</span> <span class="ml-tag product-feature">product feature</span></td>
+                        <td>2024</td>
+                        <td><a href="https://www.algolia.com/blog/product/introducing-ai-personalization/">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td>Uber</td>
+                        <td><span class="industry-tag delivery-mobility">Delivery and mobility</span></td>
+                        <td>Personalized Marketing at Scale: Uber's Out-of-App Communication Engine</td>
+                        <td><span class="ml-tag recommender-system">recommender system</span></td>
+                        <td>2024</td>
+                        <td><a href="https://www.uber.com/en-GB/blog/personalized-marketing-at-scale/">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td>Gitlab</td>
+                        <td><span class="industry-tag tech">Tech</span></td>
+                        <td>Developing GitLab Duo: How we validate and test AI models</td>
+                        <td><span class="ml-tag product-feature">product feature</span> <span class="ml-tag llm">LLM</span> <span class="ml-tag generative-ai">generative AI</span></td>
+                        <td>2024</td>
+                        <td><a href="https://about.gitlab.com/blog/2024/05/09/developing-gitlab-duo-how-we-validate-and-test-ai-models/">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td>LinkedIn</td>
+                        <td><span class="industry-tag social-platforms">Social platforms</span></td>
+                        <td>Matching LinkedIn members with the right Premium subscription</td>
+                        <td><span class="ml-tag product-feature">product feature</span></td>
+                        <td>2024</td>
+                        <td><a href="https://www.linkedin.com/blog/engineering/machine-learning-personalized-product-recommendations-premium-subscriptions">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td>Swiggy</td>
+                        <td><span class="industry-tag delivery-mobility">Delivery and mobility</span></td>
+                        <td>New-User Product Recommendations for Q-Commerce</td>
+                        <td><span class="ml-tag recommender-system">recommender system</span></td>
+                        <td>2024</td>
+                        <td><a href="https://bytes.swiggy.com/new-user-product-recommendations-for-q-commerce-9ef8dad00f05">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td>Picnic</td>
+                        <td><span class="industry-tag delivery-mobility">Delivery and mobility</span></td>
+                        <td>Enhancing Search Retrieval with Large Language Models at Picnic</td>
+                        <td><span class="ml-tag llm">LLM</span> <span class="ml-tag search">search</span> <span class="ml-tag generative-ai">generative AI</span></td>
+                        <td>2024</td>
+                        <td><a href="https://blog.picnic.nl/enhancing-search-retrieval-with-large-language-models-at-picnic-90192adfa45">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td>Careem</td>
+                        <td><span class="industry-tag delivery-mobility">Delivery and mobility</span></td>
+                        <td>Temporary holds: Leveraging machine learning to mitigate fraud risks</td>
+                        <td><span class="ml-tag fraud-detection">fraud detection</span></td>
+                        <td>2024</td>
+                        <td><a href="https://engineering.careem.com/temporary-holds-leveraging-machine-learning-to-mitigate-fraud-risks-4e1e86c1bd0">Link</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+        
+        <h2>Getting Started with Machine Learning</h2>
+        <p>To start your journey in machine learning, consider the following steps:</p>
+        <ol>
+            <li>Learn the basics of programming (Python is a popular choice for ML)</li>
+            <li>Study fundamental mathematics and statistics</li>
+            <li>Explore ML libraries like scikit-learn, TensorFlow, or PyTorch</li>
+            <li>Work on small projects to apply your knowledge</li>
+            <li>Stay updated with the latest trends and research in ML</li>
+        </ol>
+        
+        <h2>Conclusion</h2>
+        <p>Machine Learning is a vast and exciting field with numerous applications across industries. By understanding the basics and exploring real-world examples, you can begin to harness the power of ML in your own projects and career.</p>
     </article>
-    <div class="container">
-        <a href="../resources.html">Back to Resources</a>
+    
+    <hr class="thin-line">
+    
+    <div class="social-links">
+        <p>Email: <a href="mailto:nikitaparate009@gmail.com">nikitaparate009@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/nikita-parate-97941370/">nikita-parate-97941370</a></p>
+        <p>1:1 connect: <a href="https://topmate.io/nikita_parate">nikita_parate</a></p>
     </div>
 </body>
 </html>
